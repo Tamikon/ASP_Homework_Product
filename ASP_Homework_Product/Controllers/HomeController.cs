@@ -18,15 +18,10 @@ namespace ASP_Homework_Product.Controllers
             productList = new ProductList();
         }
 
-        public string Index()
+        public IActionResult Index()
         {
             var products = productList.GetProducts();
-            var result = "";
-            foreach (var product in products)
-            {
-                result += product + "\n\n";
-            }
-            return result;
+            return View(products);
         }
 
         public IActionResult Privacy()

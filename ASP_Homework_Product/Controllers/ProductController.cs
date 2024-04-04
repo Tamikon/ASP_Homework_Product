@@ -10,14 +10,10 @@ namespace ASP_Homework_Product.Controllers
         {
             productList = new ProductList();
         }
-        public string Index(int id)
+        public ActionResult Index(int id)
         {
             var product = productList.TryGetById(id);
-            if (product == null)
-            {
-                return "Ноутбука нет на складе";
-            }
-            return $"{product}\n{product.Description}";
+            return View(product);
         }
     }
 }
