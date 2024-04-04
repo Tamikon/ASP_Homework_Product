@@ -5,7 +5,7 @@ namespace ASP_Homework_Product
 {
     public class ProductList
     {
-        private static List<Product> listOfProducts = new List<Product>()
+        private List<Product> listOfProducts = new List<Product>()
         {
           new Product("ASUS ROG Zephyrus Duo 16",
               "2560х1600, AMD Ryzen 9 7945HX 2.5 ГГц, NVIDIA GeForce RTX 4090",

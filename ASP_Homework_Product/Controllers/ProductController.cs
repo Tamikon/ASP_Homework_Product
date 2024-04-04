@@ -6,10 +6,11 @@ namespace ASP_Homework_Product.Controllers
     {
         private readonly ProductList productList;
 
-        public ProductController()
+        public ProductController(ProductList productList)
         {
-            productList = new ProductList();
+            this.productList = productList;
         }
+
         public ActionResult Index(int id)
         {
             var product = productList.TryGetById(id);

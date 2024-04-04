@@ -13,9 +13,9 @@ namespace ASP_Homework_Product.Controllers
     {
         private readonly ProductList productList;
 
-        public HomeController()
+        public HomeController(ProductList productList)
         {
-            productList = new ProductList();
+            this.productList = productList;
         }
 
         public IActionResult Index()
