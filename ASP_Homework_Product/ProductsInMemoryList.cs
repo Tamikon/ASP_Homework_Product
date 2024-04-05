@@ -3,7 +3,7 @@ using ASP_Homework_Product.Models;
 
 namespace ASP_Homework_Product
 {
-    public class ProductList
+    public class ProductsInMemoryList : IProductList
     {
         private List<Product> listOfProducts = new List<Product>()
         {

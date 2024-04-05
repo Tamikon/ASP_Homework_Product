@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ASP_Homework_Product
 {
-    public class CartsRes
+    public class CartsInMemoryRes : ICartsRes
     {
         private List<Cart> carts = new List<Cart>();
 
@@ -14,8 +14,8 @@ namespace ASP_Homework_Product
             return carts.FirstOrDefault(x => x.UserId == userId);
         }
 
-		public void Add(Product product, string userId)
-		{
+        public void Add(Product product, string userId)
+        {
             var existingCart = TryGetByUserId(userId);
             if (existingCart == null)
             {
@@ -52,6 +52,6 @@ namespace ASP_Homework_Product
                     });
                 }
             }
-		}
-	}
+        }
+    }
 }
