@@ -25,5 +25,17 @@ namespace ASP_Homework_Product.Controllers
             cartsRes.Add(product, Constants.UserId);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DecreaseAmount(int productId)
+        {
+            cartsRes.DecreaseAmount(productId, Constants.UserId);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Clear()
+        {
+            cartsRes.Clear(Constants.UserId);
+            return RedirectToAction("Index");
+        }
     }
 }
