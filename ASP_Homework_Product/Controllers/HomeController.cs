@@ -12,14 +12,18 @@ namespace ASP_Homework_Product.Controllers
     public class HomeController : Controller
     {
         private readonly IProductList productList;
+        private readonly ICartsRes cartsRes;
 
-        public HomeController(IProductList productList)
+        public HomeController(IProductList productList, ICartsRes cartsRes)
         {
             this.productList = productList;
+            this.cartsRes = cartsRes;
         }
 
         public IActionResult Index()
         {
+            var cart = cartsRes.TryGetByUserId(Constants.UserId);
+            ViewBag.ProductCount = cart?.Amount;
             var products = productList.GetProducts();
             return View(products);
         }
